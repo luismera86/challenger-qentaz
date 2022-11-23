@@ -8,7 +8,6 @@ class Server {
 		this.app = express()
 		this.port = process.env.PORT || '3000'
 		this.db = db
-
 		this.router()
 		this.middlewares()
 		this.dbConnection()
@@ -43,3 +42,4 @@ class Server {
 }
 
 export default Server
+
