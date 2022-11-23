@@ -1,4 +1,5 @@
 import cors from 'cors'
+import { db } from '../config/db.config.js'
 import express from 'express'
 import router from '../routes/index.js'
 
@@ -6,9 +7,11 @@ class Server {
 	constructor() {
 		this.app = express()
 		this.port = process.env.PORT || '3000'
+		this.db = db
 
 		this.router()
 		this.middlewares()
+		this.dbConnection()
 		this.listen()
 	}
 
@@ -27,6 +30,15 @@ class Server {
 
 	router() {
 		this.app.use('/api', router)
+	}
+
+	async dbConnection() {
+		await this.db.sync()
+		try {
+			console.log('DB Connected')
+		} catch (error) {
+			console.log(error)
+		}
 	}
 }
 
