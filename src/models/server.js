@@ -1,4 +1,6 @@
+import cors from 'cors'
 import express from 'express'
+import router from '../routes'
 
 class Server {
 	constructor() {
@@ -6,7 +8,7 @@ class Server {
 		this.port = process.env.PORT || '3000'
 
         this.middlewares()
-        // router
+        this.router()
 		this.listen()
 	}
 
@@ -19,9 +21,13 @@ class Server {
 	middlewares() {
 		this.app.use(express.static('public'))
 		this.app.use(express.urlencoded({ extended: true }))
-		this.app.use(express.json())
+        this.app.use(express.json())
+        this.app.use(cors)
     }
     
+    router() {
+        this.app.use('/api', router)
+    }
 }
 
 export default Server
