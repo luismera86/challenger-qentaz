@@ -8,6 +8,6 @@ const airlinesRoutes = Router()
 airlinesRoutes.get('/', getAirlines)
 airlinesRoutes.post('/', postAirline)
 airlinesRoutes.put('/:id', checkAirlineId, putAirline)
-airlinesRoutes.delete('/:id', deleteAirline)
+airlinesRoutes.delete('/:id', checkAirlineId, deleteAirline)
 
 export default airlinesRoutes

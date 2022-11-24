@@ -36,10 +36,6 @@ export const putAirport = async (req = request, res = response) => {
 	const { id } = req.params
 	try {
 		const airport = await Airport.findByPk(id)
-		if (!airport) {
-			return res.status(401).json({ msg: `The airport with the id ${id} does not exist1` })
-		}
-
 		await airport.update(req.body)
 
 		res.status(200).json({
@@ -56,10 +52,6 @@ export const deleteAirport = async (req = request, res = response) => {
 	const { id } = req.params
 	try {
 		const airport = await Airport.findByPk(id)
-		if (!airport) {
-			return res.status(401).json({ msg: `The airport with the id ${id} does not exist1` })
-		}
-
 		await airport.destroy()
 
 		res.status(200).json({ msg: 'Airline successfully eliminated' })

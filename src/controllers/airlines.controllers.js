@@ -52,9 +52,6 @@ export const deleteAirline = async (req = request, res = response) => {
 	const { id } = req.params
 	try {
 		const airline = await Airline.findByPk(id)
-		if (!airline) {
-			return res.status(401).json({ msg: `The airline with the id ${id} does not exist` })
-		}
 
 		await airline.destroy()
 		res.status(200).json({ msg: 'Airline successfully eliminated' })

@@ -5,5 +5,5 @@ export const db = new Sequelize('pruebas', '', '', {
 	port: '5432',
     dialect: 'postgres',
     username:'postgres',
-    password: 'luis',
+    password: 'luismera2406',
 })
