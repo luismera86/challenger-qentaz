@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import { db } from '../config/db.config.js'
 
-const Airport = db.define('airport', {
+const Airport = db.define('Airports', {
     IATA_CODE: {
 		type: DataTypes.TEXT,
 	},

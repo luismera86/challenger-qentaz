@@ -1,4 +1,4 @@
-import { deleteFlight, getFlights, postFlight, putFlight } from '../controllers/flights.controllers.js'
+import { deleteFlight, getFlights, postFlight, putFlight } from '../controllers/flights.controller.js'
 
 import { Router } from 'express'
 import { checkFlightId } from '../middlewares/checkId.js'

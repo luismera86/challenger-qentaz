@@ -54,7 +54,7 @@ export const deleteAirport = async (req = request, res = response) => {
 		const airport = await Airport.findByPk(id)
 		await airport.destroy()
 
-		res.status(200).json({ msg: 'Airline successfully eliminated' })
+		res.status(200).json({ msg: 'Airport successfully eliminated' })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ msg: error })

@@ -1,4 +1,4 @@
-import { deleteAirport, getAirports, postAirport, putAirport } from '../controllers/airports.controllers.js'
+import { deleteAirport, getAirports, postAirport, putAirport } from '../controllers/airports.controller.js'
 
 import { Router } from 'express'
 import { checkAirportId } from '../middlewares/checkId.js'

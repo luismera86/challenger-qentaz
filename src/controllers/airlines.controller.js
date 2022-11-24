@@ -20,7 +20,6 @@ export const postAirline = async (req = request, res = response) => {
 		if (airline) {
 			return res.status(401).json({ msg: 'This airline is already registered' })
 		}
-		console.log(airline)
 		const newAirline = await Airline.create({ IATA_CODE, AIRLINE })
 		res.status(201).json({
 			msg: 'New airline created',
