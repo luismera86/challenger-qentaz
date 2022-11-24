@@ -2,11 +2,11 @@ import { deleteAirline, getAirlines, postAirline, putAirline } from '../controll
 
 import { Router } from 'express'
 
-const airLinesRoutes = Router()
+const airlinesRoutes = Router()
 
-airLinesRoutes.get('/', getAirlines)
-airLinesRoutes.post('/', postAirline)
-airLinesRoutes.put('/', putAirline)
-airLinesRoutes.delete('/', deleteAirline)
+airlinesRoutes.get('/', getAirlines)
+airlinesRoutes.post('/', postAirline)
+airlinesRoutes.put('/', putAirline)
+airlinesRoutes.delete('/', deleteAirline)
 
-export default airLinesRoutes
+export default airlinesRoutes

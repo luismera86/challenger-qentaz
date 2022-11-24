@@ -8,10 +8,11 @@ class Server {
 		this.app = express()
 		this.port = process.env.PORT || '3000'
 		this.db = db
-		this.router()
+
+		this.listen()
 		this.middlewares()
 		this.dbConnection()
-		this.listen()
+		this.router()
 	}
 
 	listen() {
@@ -21,10 +22,10 @@ class Server {
 	}
 
 	middlewares() {
-		this.app.use(express.static('public'))
-		this.app.use(express.urlencoded({ extended: true }))
+		this.app.use(cors())
 		this.app.use(express.json())
-		this.app.use(cors)
+		this.app.use(express.urlencoded({ extended: true }))
+		this.app.use(express.static('public'))
 	}
 
 	router() {
@@ -32,7 +33,7 @@ class Server {
 	}
 
 	async dbConnection() {
-		await this.db.sync()
+		await this.db.sync({ force: false })
 		try {
 			console.log('DB Connected')
 		} catch (error) {
@@ -42,4 +43,3 @@ class Server {
 }
 
 export default Server
-

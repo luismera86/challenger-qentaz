@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 
 export const db = new Sequelize('pruebas', '', '', {
-	host: '127.0.0.1',
+	host: 'localhost',
 	port: '5432',
     dialect: 'postgres',
     username:'postgres',

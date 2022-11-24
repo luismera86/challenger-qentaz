@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import { db } from '../config/db.config.js'
 
-const AirLine = db.define('AirLine', {
+const Airline = db.define('Airline', {
 	IATA_CODE: {
 		type: DataTypes.TEXT,
 	},
@@ -10,4 +10,4 @@ const AirLine = db.define('AirLine', {
 	},
 })
 
-export default AirLine
+export default Airline
