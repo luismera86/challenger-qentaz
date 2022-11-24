@@ -6,7 +6,7 @@ export const getAirports = async (req = request, res = response) => {
 	try {
 		const airPorts = await AirPort.findAll()
 		res.status(200).json({
-			airPorts
+			airPorts,
 		})
 	} catch (error) {
 		console.log(error)
