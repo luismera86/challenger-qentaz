@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import { db } from '../config/db.config.js'
 
-const Flight = db.define('Flight', {
+const Flight = db.define('flight', {
 	YEAR: {
 		type: DataTypes.INTEGER,
 	},

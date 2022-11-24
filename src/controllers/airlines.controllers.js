@@ -1,6 +1,6 @@
 import { request, response } from 'express'
 
-import Airline from '../models/airLine.model.js'
+import Airline from '../models/airline.model.js'
 
 export const getAirlines = async (req = request, res = response) => {
 	console.log('entra')
@@ -33,14 +33,10 @@ export const postAirline = async (req = request, res = response) => {
 }
 
 export const putAirline = async (req = request, res = response) => {
-	const { body } = req
 	const { id } = req.params
 	try {
 		const airline = await Airline.findByPk(id)
-		if (!airline) {
-			return res.status(401).json({ msg: `The airline with the id ${id} does not exist1` })
-		}
-		await airline.update(body)
+		await airline.update(req.body)
 
 		res.status(200).json({
 			msg: 'Airline successfully upgraded',
@@ -57,14 +53,11 @@ export const deleteAirline = async (req = request, res = response) => {
 	try {
 		const airline = await Airline.findByPk(id)
 		if (!airline) {
-			return res.status(401).json({ msg: `The airline with the id ${id} does not exist1` })
+			return res.status(401).json({ msg: `The airline with the id ${id} does not exist` })
 		}
 
 		await airline.destroy()
-		res.status(200).json({
-			msg: 'Airline successfully eliminated',
-			airline,
-		})
+		res.status(200).json({ msg: 'Airline successfully eliminated' })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ msg: error })
