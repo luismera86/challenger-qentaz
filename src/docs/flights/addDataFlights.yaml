@@ -1,0 +1,11 @@
+paths:
+  /api/flight/add:
+    post:
+      tags:
+        - Flights
+      summary: 'Add list of provided flights'
+      description: In this endpoint it only adds a list of provided flights to the database to have initially and work with. NOTE Only do this procedure once, otherwise the data may be duplicated. .
+
+      responses:
+        '200':
+          description: Aggregated initial flights in database.

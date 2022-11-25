@@ -1,0 +1,17 @@
+paths:
+  /api/flight:
+    post:
+      tags:
+        - Flights
+      summary: 'Add a new flight'
+      description: With this endpoint you will add a new flight in your database, by entering through request body the indicated schema
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/flight'
+      responses:
+        '200':
+          description: New flight created.
+        '422':
+          description: This flight is already registered.

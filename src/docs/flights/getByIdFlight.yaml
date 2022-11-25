@@ -1,0 +1,18 @@
+paths:
+  /api/flight/{id}:
+    get:
+      tags:
+        - Flights
+      summary: 'Get flight by id'
+      description: With this endpoint you will find the flight of your database with the id indicated in the parameter, entering through the body of the request the indicated schema
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: flight successfully upgraded.
+        '400':
+          description: The flight with the id ${id} does not exist.

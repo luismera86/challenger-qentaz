@@ -1,0 +1,24 @@
+paths:
+  /api/flight/{id}:
+    delete:
+      tags:
+        - Flights
+      summary: 'Delete flight'
+      description: With this endpoint you will delete the flight from your database with the id indicated in the parameter, entering through the body of the request the indicated scheme
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/flight'
+
+      responses:
+        '200':
+          description: flight successfully upgraded.
+        '400':
+          description: The flight with the id ${id} does not exist.
