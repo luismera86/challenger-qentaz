@@ -1,6 +1,7 @@
 import { request, response } from 'express'
 
 import Airline from '../models/airline.model.js'
+import { airlines } from '../data/airlines.data.js'
 
 export const getAirlines = async (req = request, res = response) => {
 	console.log('entra')
@@ -25,6 +26,18 @@ export const postAirline = async (req = request, res = response) => {
 			msg: 'New airline created',
 			newAirline,
 		})
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
+export const addDataInDb = async (req = request, res = response) => {
+	try {
+		airlines.forEach(async (airline) => {
+			await Airline.create(airline)
+		})
+		res.status(201).json({ msg: 'Aggregated initial airlines in database' })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ msg: error })
