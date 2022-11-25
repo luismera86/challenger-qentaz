@@ -10,7 +10,7 @@ export const checkAirlineId = async (req = request, res = response, next) => {
 		const airline = await Airline.findByPk(id)
 		console.log(airline)
 		if (!airline) {
-			return res.status(401).json({ msg: `The airline with the id ${id} does not exist` })
+			return res.status(400).json({ msg: `The airline with the id ${id} does not exist` })
         }
         
         next()
@@ -25,7 +25,7 @@ export const checkAirportId = async () => {
 	try {
 		const airport = await Airport.findByPk(id)
 		if (!airport) {
-			return res.status(401).json({ msg: `The airport with the id ${id} does not exist1` })
+			return res.status(400).json({ msg: `The airport with the id ${id} does not exist1` })
 		}
         
         next()
@@ -40,7 +40,7 @@ export const checkFlightId = async () => {
 	try {
 		const airport = await Flight.findByPk(id)
 		if (!airport) {
-			return res.status(401).json({ msg: `The flight with the id ${id} does not exist1` })
+			return res.status(400).json({ msg: `The flight with the id ${id} does not exist1` })
 		}
         
         next()

@@ -4,10 +4,21 @@ import Airline from '../models/airline.model.js'
 import { airlines } from '../data/airlines.data.js'
 
 export const getAirlines = async (req = request, res = response) => {
-	console.log('entra')
 	try {
-		const airLines = await Airline.findAll()
-		res.status(200).json({ airLines })
+		const airlines = await Airline.findAll()
+		res.status(200).json({ airlines })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
+export const getByIdAirline = async (req = request, res = response) => {
+	const { id } = req.params
+	try {
+		const airline = await Airline.findByPk(id)
+
+		res.status(200).json({ airline })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ msg: error })
@@ -19,10 +30,10 @@ export const postAirline = async (req = request, res = response) => {
 	try {
 		const airline = await Airline.findOne({ where: { AIRLINE } })
 		if (airline) {
-			return res.status(401).json({ msg: 'This airline is already registered' })
+			return res.status(400).json({ msg: 'This airline is already registered' })
 		}
 		const newAirline = await Airline.create({ IATA_CODE, AIRLINE })
-		res.status(201).json({
+		res.status(200).json({
 			msg: 'New airline created',
 			newAirline,
 		})
