@@ -8,10 +8,10 @@ class Server {
 		this.app = express()
 		this.port = process.env.PORT || '3000'
 		this.db = db
-
+		
 		this.listen()
-		this.middlewares()
 		this.dbConnection()
+		this.middlewares()
 		this.router()
 	}
 
@@ -33,7 +33,7 @@ class Server {
 	}
 
 	async dbConnection() {
-		await this.db.sync({ force: false })
+		await this.db.sync({force: false})
 		try {
 			console.log('DB Connected')
 		} catch (error) {
@@ -43,3 +43,4 @@ class Server {
 }
 
 export default Server
+

@@ -3,12 +3,12 @@ import { addDataInDb, deleteAirport, getAirports, postAirport, putAirport } from
 import { Router } from 'express'
 import { checkAirportId } from '../middlewares/checkId.js'
 
-const airPortsRoutes = Router()
+const airportsRoutes = Router()
 
-airPortsRoutes.get('/', getAirports)
-airPortsRoutes.post('/', postAirport)
-airPortsRoutes.post('/add', addDataInDb)
-airPortsRoutes.put('/:id', checkAirportId, putAirport)
-airPortsRoutes.delete('/:id', checkAirportId, deleteAirport)
+airportsRoutes.get('/', getAirports)
+airportsRoutes.post('/', postAirport)
+airportsRoutes.post('/add', addDataInDb)
+airportsRoutes.put('/:id', checkAirportId, putAirport)
+airportsRoutes.delete('/:id', checkAirportId, deleteAirport)
 
-export default airPortsRoutes
+export default airportsRoutes
