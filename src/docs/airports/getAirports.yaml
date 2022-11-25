@@ -8,4 +8,4 @@ paths:
 
       responses:
         '200':
-          description: Returns the list of airports that are in the database
+          description: Returns the list of airports that are in the database 

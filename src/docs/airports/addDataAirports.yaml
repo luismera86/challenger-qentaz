@@ -1,0 +1,11 @@
+paths:
+  /api/airport/add:
+    post:
+      tags:
+        - Airports
+      summary: 'Add list of provided airports'
+      description: In this endpoint it only adds a list of provided airports to the database to have initially and work with. NOTE Only do this procedure once, otherwise the data may be duplicated. .
+
+      responses:
+        '200':
+          description: Aggregated initial airports in database.

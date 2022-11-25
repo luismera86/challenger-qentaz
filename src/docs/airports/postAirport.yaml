@@ -1,0 +1,17 @@
+paths:
+  /api/airport:
+    post:
+      tags:
+        - Airports
+      summary: 'Add a new airport'
+      description: With this endpoint you will add a new airport in your database, by entering through request body the indicated schema
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/airport'
+      responses:
+        '200':
+          description: New airport created.
+        '422':
+          description: This airport is already registered.

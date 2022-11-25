@@ -1,0 +1,24 @@
+paths:
+  /api/airport/{id}:
+    put:
+      tags:
+        - Airports
+      summary: 'Update airport'
+      description: With this endpoint you will update the airport of your database with the id indicated in the parameter, introducing through the body of the request the indicated scheme.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/airport'
+
+      responses:
+        '200':
+          description: Airport successfully upgraded.
+        '400':
+          description: The airport with the id ${id} does not exist.

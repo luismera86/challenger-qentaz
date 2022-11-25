@@ -11,12 +11,6 @@ paths:
           schema:
             type: string
           required: true
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/airline'
-
       responses:
         '200':
           description: Airline successfully upgraded.
