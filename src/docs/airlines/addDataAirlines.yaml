@@ -2,7 +2,7 @@ paths:
   /api/airline/add:
     post:
       tags:
-        - Airline
+        - Airlines
       summary: 'Add list of provided airlines'
       description: In this endpoint it only adds a list of provided airlines to the database to have initially and work with. NOTE Only do this procedure once, otherwise the data may be duplicated. .
 

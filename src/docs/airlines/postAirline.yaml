@@ -2,7 +2,7 @@ paths:
   /api/airline:
     post:
       tags:
-        - Airline
+        - Airlines
       summary: 'Add a new airline'
       description: With this endpoint you will add a new airline in your database, by entering through request body the indicated schema
       requestBody:

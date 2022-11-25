@@ -2,7 +2,7 @@ paths:
   /api/airline/{id}:
     put:
       tags:
-        - Airline
+        - Airlines
       summary: 'Update airline'
       description: With this endpoint you will update the airline of your database with the id indicated in the parameter, introducing through the body of the request the indicated scheme.
       parameters:

@@ -1,3 +1,4 @@
 tags:
   - name: Airlines
-    description: A lot of number
+  - name: Airports
+  - name: Flights

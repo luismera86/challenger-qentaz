@@ -2,7 +2,7 @@ paths:
   /api/airline:
     get:
       tags:
-        - Airline
+        - Airlines
       summary: 'List all airlines'
       description: This endpoint is used to list all the airlines registered in the database.
 
