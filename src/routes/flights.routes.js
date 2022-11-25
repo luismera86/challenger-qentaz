@@ -1,4 +1,4 @@
-import { addDataInDb, deleteFlight, getFlights, postFlight, putFlight } from '../controllers/flights.controller.js'
+import { addDataInDb, deleteFlight, getByIdFlight, getFlights, postFlight, putFlight } from '../controllers/flights.controller.js'
 
 import { Router } from 'express'
 import { checkFlightId } from '../middlewares/checkId.js'
@@ -6,6 +6,7 @@ import { checkFlightId } from '../middlewares/checkId.js'
 const flightsRoutes = Router()
 
 flightsRoutes.get('/', getFlights)
+flightsRoutes.get('/:id',checkFlightId, getByIdFlight)
 flightsRoutes.post('/', postFlight)
 flightsRoutes.post('/add', addDataInDb)
 flightsRoutes.put('/:id', checkFlightId, putFlight)

@@ -14,6 +14,18 @@ export const getFlights = async (req = request, res = response) => {
 	}
 }
 
+export const getByIdFlight = async (req = request, res = response) => {
+	const { id } = req.params
+	try {
+		const flight = await Flight.findByPk(id)
+
+		res.status(200).json({ flights })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
 export const postFlight = async (req = request, res = response) => {
 	const { FLIGHT_NUMBER } = req.body
 	try {
