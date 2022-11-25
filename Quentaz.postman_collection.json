@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "3fa93c56-5ab0-448d-93c2-421cd4bb8d3c",
+		"name": "Quentaz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20178822"
+	},
+	"item": [
+		{
+			"name": "Get airlines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/airline",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airline"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get airports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/airport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get flights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/flight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post airlines",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airline/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airline",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post airports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRPORT\": \"Aeropuertos Jorge Newbery\",\r\n    \"CITY\": \"Buenos Aires\",\r\n    \"STATE\": \"Capital\",\r\n    \"COUNTRY\": \"Argentina\",\r\n    \"LATITUDE\": 32.41132,\r\n    \"LONGITUDE\": -99.6819\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"YEAR\": 2022,\r\n    \"MONTH\": 1,\r\n    \"DAY\": 1,\r\n    \"DAY_OF_WEEK\": 4,\r\n    \"AIRLINE\": \"AS\",\r\n    \"FLIGHT_NUMBER\": 82338,\r\n    \"TAIL_NUMBER\": \"N407AS\",\r\n    \"ORIGIN_AIRPORT\": \"ANC\",\r\n    \"DESTINATION_AIRPORT\": \"AA\",\r\n    \"SCHEDULED_DEPARTURE\": 5,\r\n    \"DEPARTURE_TIME\": 2354,\r\n    \"DEPARTURE_DELAY\": -11,\r\n    \"TAXI_OUT\": 21,\r\n    \"WHEELS_OFF\": 15,\r\n    \"SCHEDULED_TIME\": 205,\r\n    \"ELAPSED_TIME\": 194,\r\n    \"AIR_TIME\": 169,\r\n    \"DISTANCE\": 1448,\r\n    \"WHEELS_ON\": 404,\r\n    \"TAXI_IN\": 4,\r\n    \"SCHEDULED_ARRIVAL\": 430,\r\n    \"ARRIVAL_TIME\": 408,\r\n    \"ARRIVAL_DELAY\": -22,\r\n    \"DIVERTED\": 0,\r\n    \"CANCELLED\": 0,\r\n    \"CANCELLATION_REASON\": \"\",\r\n    \"AIR_SYSTEM_DELAY\": null,\r\n    \"SECURITY_DELAY\": null,\r\n    \"AIRLINE_DELAY\": null,\r\n    \"LATE_AIRCRAFT_DELAY\": null,\r\n    \"WEATHER_DELAY\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add data in Database Airlines",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airline/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airline",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add data in Database Airports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airport/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airport",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add data in Database Flights",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete airlines",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airline/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airline",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete airport",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airport/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airport",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete flight",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argentinas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put airlines",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argenintas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airline/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airline",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put airport",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argenintas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/airport/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"airport",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put flight",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IATA_CODE\": \"AA\",\r\n    \"AIRLINE\": \"Aerolineas Argenintas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/flight/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"flight",
+						"19"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
