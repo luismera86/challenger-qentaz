@@ -13,6 +13,17 @@ export const getAirports = async (req = request, res = response) => {
 	}
 }
 
+export const getByIdAirport = async (req = request, res = response) => {
+	const { id } = req.params
+	try {
+		const airport = await Airport.findByPk(id)
+		res.status(200).json({ airport })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
 export const postAirport = async (req = request, res = response) => {
 	const { IATA_CODE, AIRPORT, CITY, STATE, COUNTRY, LATITUDE, LONGITUDE } = req.body
 	try {

@@ -13,7 +13,7 @@ import { checkAirlineId } from '../middlewares/checkId.js'
 const airlinesRoutes = Router()
 
 airlinesRoutes.get('/', getAirlines)
-airlinesRoutes.get('/:id', getByIdAirline)
+airlinesRoutes.get('/:id', checkAirlineId, getByIdAirline)
 airlinesRoutes.post('/', postAirline)
 airlinesRoutes.post('/add', addDataInDb)
 airlinesRoutes.put('/:id', checkAirlineId, putAirline)
