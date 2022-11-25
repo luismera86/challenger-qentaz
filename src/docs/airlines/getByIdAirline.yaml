@@ -1,0 +1,24 @@
+paths:
+  /api/airline/{id}:
+    get:
+      tags:
+        - Airline
+      summary: 'Get airline by id'
+      description: With this endpoint you will find the airline of your database with the id indicated in the parameter, entering through the body of the request the indicated schema
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/airline'
+
+      responses:
+        '200':
+          description: Airline successfully upgraded.
+        '400':
+          description: The airline with the id ${id} does not exist.
