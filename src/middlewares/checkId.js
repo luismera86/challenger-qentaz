@@ -20,7 +20,7 @@ export const checkAirlineId = async (req = request, res = response, next) => {
 	}
 }
 
-export const checkAirportId = async () => {
+export const checkAirportId = async (req = request, res = response, next) => {
 	const { id } = req.params
 	try {
 		const airport = await Airport.findByPk(id)
@@ -35,7 +35,7 @@ export const checkAirportId = async () => {
 	}
 }
 
-export const checkFlightId = async () => {
+export const checkFlightId = async (req = request, res = response, next) => {
 	const { id } = req.params
 	try {
 		const airport = await Flight.findByPk(id)
